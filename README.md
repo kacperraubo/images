@@ -77,6 +77,3 @@ Include the access token in the Authorization header for subsequent requests.
 <li> psycopg2 - PostgreSQL adapter for Python  
 <li> PyJWT - JSON Web Token implementation in Python  
 <br><br>
-
-## Task Completion Time
-3 hours
