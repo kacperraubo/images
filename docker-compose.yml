@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    depends_on:
+      - db
+    environment:
+      - RDS_ENGINE=django.db.backends.postgresql_psycopg2
+      - RDS_NAME=postgres
+      - RDS_USER=postgres
+      - RDS_PASSWORD=postgres
+      - RDS_HOST=host
+      - RDS_PORT=port
+      - SECRET_KEY=secret-key
+      - DEBUG=1
+
+  db:
+    image: postgres:latest
+    environment:
+      
